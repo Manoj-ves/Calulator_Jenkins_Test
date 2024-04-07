@@ -33,6 +33,13 @@ app.get('/calculate', (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
+
+// End the connection after 30 seconds
+setTimeout(() => {
+    server.close(() => {
+        console.log('Server connection closed after 30 seconds');
+    });
+}, 30000);
