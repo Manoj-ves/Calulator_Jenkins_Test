@@ -42,4 +42,4 @@ setTimeout(() => {
     server.close(() => {
         console.log('Server connection closed after 30 seconds');
     });
-}, 30000);
+}, 10000);
